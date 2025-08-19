@@ -62,6 +62,13 @@ public class Cplex_Wrapper {
 		}
 	}
 	
+	public void addRow(double arg0, double arg1, int[] arg2, double[] arg3) {
+		try {
+			lp.addRow(arg0, arg1, arg2, arg3);
+		} catch (IloException e) {
+			System.err.println("cplex error - " + e.getClass().getName() + ": " + e.getMessage());
+		}
+	}
 	
 	public void addRows(double[] arg0, double[] arg1, int[][] arg2, double[][] arg3) {
 		try {
